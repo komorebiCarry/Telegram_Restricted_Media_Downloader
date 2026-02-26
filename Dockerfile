@@ -25,8 +25,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # 复制项目文件
 COPY main.py .
 COPY module/ ./module/
-COPY res/icon.ico ./res/
-COPY res/logo.png ./res/
 
 # 创建配置目录、下载目录、会话目录和临时目录
 RUN mkdir -p /app/TRMD /app/downloads /app/sessions /app/temp
