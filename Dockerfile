@@ -33,4 +33,6 @@ RUN mkdir -p /app/TRMD /app/downloads /app/sessions /app/temp
 VOLUME ["/app/TRMD", "/app/downloads", "/app/sessions", "/app/temp"]
 
 # 运行应用
-CMD ["python", "main.py"]
+# --config: 用户配置存到挂载目录，容器重启不丢失
+# session_directory 和 temp_directory 可在 config.yaml 中自行配置
+CMD ["python", "main.py", "--config", "/app/TRMD/config.yaml"]
